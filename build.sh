@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 CDIR="$(cd "$(dirname "$0")" && pwd)"
 
 while getopts A:K:q option
@@ -22,6 +23,12 @@ do
     cp $CDIR/$f $build_dir/
 done
 cp $CDIR/zshrc $build_dir/.zshrc
+
+echo 'ARCH'
+echo $ARCH
+
+echo 'Kernel'
+echo $KERNEL
 
 tag=v4.0.1
 #distfile=zsh-5.8-linux-x86_64
